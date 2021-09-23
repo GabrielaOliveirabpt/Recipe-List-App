@@ -1,0 +1,94 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  padding: 0px;
+  margin: 0px;
+}
+
+.App-header {
+  background-color: rgb(253, 247, 236);
+  color: rgb(68, 67, 67);
+}
+
+.header {
+  font-size: calc(15px + 3vmin);
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.textDisplay {
+  text-align: left;
+  color: rgb(40, 184, 141);
+  padding: 30px;
+}
+
+.textCards {
+  text-align: left;
+  color: rgb(40, 184, 141);
+  padding: 12px;
+  font-size: calc(3px + 2vmin);
+}
+
+.displayDiv {
+  border: 1px solid wheat;
+  flex: 2 ;
+  margin-right: 28px;
+  margin-left: 100px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.tagsDisplayDiv {
+  padding: 0px 30px;
+  display: flex;
+}
+
+div.displayDiv img {
+  width: 100%;
+  height: auto;
+}
+
+div.card img {
+  width: 100%;
+  height: auto;
+}
+.cardContainer {
+  flex: 1 ;
+  margin-left: 28px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag {
+  padding: 4px 6px;
+  margin: 2px;
+  font-size: 18px;
+  background-color: goldenrod;
+  color: white;
+  text-align: left;
+}
+
+.card {
+  border: 1px solid wheat;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: rgb(255, 255, 255);
+}
+
+div.card:hover {
+  border: 2px solid rgb(238, 204, 14);
+}
+
