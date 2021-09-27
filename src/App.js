@@ -41,8 +41,8 @@ class App extends Component {
   componentDidMount() {
     this.getDataFromContentful();
   }
-  handleClick = () => {
-    console.log(this.state, 'this needs to update the state with the display info')
+  handleClick = (id) => {
+    console.log(id, 'this needs to update the state with the display info')
   }
   render() {
     return (
@@ -65,6 +65,7 @@ class App extends Component {
               title={this.state.title}
               photo={this.state.photo}
               handleClick={this.handleClick}
+              recipeData={this.state.recipeData}
             />
           </div>
           
