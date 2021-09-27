@@ -6,16 +6,22 @@ class RecipeDisplay extends Component {
         return (
             <React.Fragment>
                     <div className="displayDiv">
-                        <img className="img" src={this.props.photo} alt="placeholder" 
+                        <img className="img" src={this.props.photo} alt="recipePhoto" 
                         />
                         <h2 className="textDisplay">{this.props.title}</h2>
                          {/* tags */}
                         <div className="tagsDisplayDiv">
-                            <span className="tag">healthy</span>
-                            <span className="tag">vegan</span>
+                             {this.props.tags && (this.props.tags.map(tag => {
+                                return (
+                                    <span  key={"tag"+tag} className="tag">{tag}</span>
+                                )
+                                }))
+                            } 
                         </div>
                         <p className="textDisplay">{this.props.description}</p>
-                        <p className="textDisplay">{this.props.chef}</p>
+                        {this.props.chef && (
+                                <p className="textDisplay">{this.props.chef}</p>
+                        )}
                        
                     </div>
                           

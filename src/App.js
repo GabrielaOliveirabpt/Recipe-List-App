@@ -30,7 +30,7 @@ class App extends Component {
           title: response.items[3].fields.title,
           photo: response.items[3].fields.photo.fields.file.url,
           description: response.items[3].fields.description,
-          // // tags: [ response.items[3].fields.tags[0].fields.name, response.items[3].fields.tags[1].fields.name ],
+          tags: [ response.items[3].fields.tags[0].fields.name, response.items[3].fields.tags[1].fields.name ], // fields.tags[1].sys.id
           chef: response.items[3].fields.chef.fields.name
         })
       
@@ -42,8 +42,9 @@ class App extends Component {
     this.getDataFromContentful();
   }
   handleClick = (id) => {
-    console.log(id, 'this needs to update the state with the display info')
+    console.log(id, this.state)
   }
+  
   render() {
     return (
       <div className="App">
