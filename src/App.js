@@ -46,30 +46,30 @@ class App extends Component {
     console.log('objId:', objNum)
     await this.client.getEntries({content_type:'recipe'})
     .then((response) => {
-      let chefin;
+      let chefUpdated;
       if(objNum === 3 || objNum === 2) {
-        chefin = response.items[objNum].fields.chef.fields.name
+        chefUpdated = response.items[objNum].fields.chef.fields.name
       } else {
-        chefin = ''
+        chefUpdated = ''
       }
-      let tagg;
+      let tagUpdated;
       if(objNum === 3) {
-        tagg = [ response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name ]
+        tagUpdated = [ response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name ]
         console.log('objNum = 3', response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name)
       } if(objNum === 0) {
-        tagg = [ response.items[objNum].fields.tags[0].fields.name]
+        tagUpdated = [ response.items[objNum].fields.tags[0].fields.name]
         console.log('objNum = 0', response.items[objNum].fields.tags[0].fields.name)
 
       } else {
-        tagg = ''
+        tagUpdated = ''
       }
     this.setState(
       { 
         title: response.items[objNum].fields.title,
         photo: response.items[objNum].fields.photo.fields.file.url,
         description: response.items[objNum].fields.description,
-        tags: tagg, 
-        chef: chefin,
+        tags: tagUpdated, 
+        chef: chefUpdated,
       })
     })
     .catch(console.error)
