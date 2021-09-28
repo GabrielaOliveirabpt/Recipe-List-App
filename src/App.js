@@ -14,7 +14,6 @@ class App extends Component {
       tags: null, // []
       chef: "",
       id: null,
-      recipesObjById : [],
       recipeData: []
     };
     this.client = createClient({
@@ -41,8 +40,53 @@ class App extends Component {
   componentDidMount() {
     this.getDataFromContentful();
   }
-  handleClick = (id) => {
+  handleClick = async (id) => {
     console.log(id, this.state)
+    let objNum = this.translateId(id)
+    console.log('objId:', objNum)
+    await this.client.getEntries({content_type:'recipe'})
+    .then((response) => {
+      let chefin;
+      if(objNum === 3 || objNum === 2) {
+        chefin = response.items[objNum].fields.chef.fields.name
+      } else {
+        chefin = ''
+      }
+      let tagg;
+      if(objNum === 3) {
+        tagg = [ response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name ]
+        console.log('objNum = 3', response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name)
+      } if(objNum === 0) {
+        tagg = [ response.items[objNum].fields.tags[0].fields.name]
+        console.log('objNum = 0', response.items[objNum].fields.tags[0].fields.name)
+
+      } else {
+        tagg = ''
+      }
+    this.setState(
+      { 
+        title: response.items[objNum].fields.title,
+        photo: response.items[objNum].fields.photo.fields.file.url,
+        description: response.items[objNum].fields.description,
+        tags: tagg, 
+        chef: chefin,
+      })
+    })
+    .catch(console.error)
+  }
+  translateId = (id) => {
+    if(id === '4dT8tcb6ukGSIg2YyuGEOm') {
+      return 0
+    }
+    if(id === '5jy9hcMeEgQ4maKGqIOYW6') {
+      return 1
+    }
+    if(id === '2E8bc3VcJmA8OgmQsageas') {
+      return 2
+    }
+    if(id === '437eO3ORCME46i02SeCW46') {
+      return 3
+    }
   }
   
   render() {
