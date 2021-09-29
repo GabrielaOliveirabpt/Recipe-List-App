@@ -40,10 +40,9 @@ class App extends Component {
   componentDidMount() {
     this.getDataFromContentful();
   }
+  
   handleClick = async (id) => {
-    console.log(id, this.state)
     let objNum = this.translateId(id)
-    console.log('objId:', objNum)
     await this.client.getEntries({content_type:'recipe'})
     .then((response) => {
       let chefUpdated;
@@ -53,13 +52,13 @@ class App extends Component {
         chefUpdated = ''
       }
       let tagUpdated;
-      if(objNum === 3) {
-        tagUpdated = [ response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name ]
-        console.log('objNum = 3', response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name)
-      } if(objNum === 0) {
+       if(objNum === 0) {
         tagUpdated = [ response.items[objNum].fields.tags[0].fields.name]
         console.log('objNum = 0', response.items[objNum].fields.tags[0].fields.name)
 
+      } else if(objNum === 3) {
+        tagUpdated = [ response.items[objNum].fields.tags[0].fields.name, response.items[objNum].fields.tags[1].fields.name ]
+        console.log('objNum = 3', response.items[objNum].fields.tags[1].fields.name, response.items[objNum].fields.tags[1].fields.name)
       } else {
         tagUpdated = ''
       }
