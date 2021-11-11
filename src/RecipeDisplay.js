@@ -20,7 +20,7 @@ class RecipeDisplay extends Component {
                         </div>
                         <p className="textDisplay">{this.props.description}</p>
                         {this.props.chef && (
-                                <p className="textDisplay">{this.props.chef}</p>
+                                <p className="textDisplay"><small>-{this.props.chef}</small></p>
                         )}
                        
                     </div>

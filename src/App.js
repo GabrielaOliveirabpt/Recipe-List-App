@@ -93,7 +93,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <br/>
-          <h1 className="header">Recipe List App</h1>
+          <div>
+            <h1 className="header">Recipe List App</h1>
+            {/* <h3>About us</h3> */}
+          </div>
+          
 
           <br/>
           <div className="container">

@@ -13,14 +13,15 @@ html {
 }
 
 .App-header {
-  background-color: rgb(253, 247, 236);
-  color: rgb(68, 67, 67);
+  background-color: white;
+  color: rgb(40, 184, 141);
 }
 
 .header {
   font-size: calc(15px + 3vmin);
   padding: 20px;
-  text-align: center;
+  text-align: left;
+  margin-left: 135px; 
 }
 
 .container {
@@ -30,6 +31,7 @@ html {
 
 .textDisplay {
   text-align: left;
+  line-height: 1.6;
   color: rgb(40, 184, 141);
   padding: 30px;
 }
@@ -43,10 +45,10 @@ html {
 
 .displayDiv {
   border: 1px solid wheat;
-  flex: 2 ;
+  flex: 3 ;
   margin-right: 28px;
-  margin-left: 100px;
-  background-color: rgb(255, 255, 255);
+  margin-left: 160px;
+  background-color: white;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
@@ -67,7 +69,7 @@ div.card img {
 .cardContainer {
   flex: 1 ;
   margin-left: 28px;
-  margin-right: 100px;
+  margin-right: 160px;
   display: flex;
   flex-direction: column;
 }
@@ -85,7 +87,7 @@ div.card img {
   border: 1px solid wheat;
   margin-bottom: 15px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 div.card:hover {
