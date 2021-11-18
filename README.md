@@ -1,5 +1,5 @@
 # Recipe-List-App
-<img width="1352" alt="recipe-app" src="https://user-images.githubusercontent.com/37146301/142409912-6b1d037a-424e-4196-882b-d922586aaf3d.png">
+<img width="1361" alt="recipe-app-img" src="https://user-images.githubusercontent.com/37146301/142410158-0ba61a77-a7af-41c4-81f4-8ce1083674ca.png">
 
 This is a Project using JavaScript, React, Node.js and Contentful. 
 It has a list of recipes and a display to show the one picked by the user.
